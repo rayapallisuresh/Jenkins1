@@ -1,31 +1,34 @@
-pipeline {
-    agent any
+pipeline{
+    agent{
+        label "node"
+    }
     stages{
-            staThis is a single line echo statment("A"){
-                steps{
-                    echo "This is a single line echo statment"
-                }
-                steps{
-                    echo '''
-                        This is a 
-                        multiline echo 
-                        string.. bye step
-                    '''
-                }
+        stage("1st stage"){
+            steps{
+                echo "========executing A========"
             }
             post{
                 always{
-                    echo "====++++always++++===="
+                    echo "========always after stage ========"
                 }
                 success{
-                    echo "====++++This is a single line echo statment==="
+                    echo "========A executed successfully after stage ========"
                 }
                 failure{
-                    echo"This is a single line echo statmentcution failed++++===="
+                    echo "========A execution failed after stage========"
                 }
-        
             }
         }
-
+    }
+    post{
+        always{
+            echo "========end of stage -- always========"
+        }
+        success{
+            echo "======== end of stage --  pipeline executed successfully ========"
+        }
+        failure{
+            echo "========end of stage --  pipeline execution failed========"
+        }
     }
 }
