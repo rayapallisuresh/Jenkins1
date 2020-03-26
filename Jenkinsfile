@@ -1,7 +1,7 @@
 pipeline{
-    agent{
-        any
-    }
+   
+    agent any
+
     stages{
         stage("1st stage"){
             steps{
