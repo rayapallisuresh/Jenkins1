@@ -18,6 +18,8 @@ pipeline {
                 sh 'node --version'
                 echo "Database engine is ${DB_ENGINE}"
                 echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                echo "GIT url : $GIT_URL"
+                echo "Job url : $JOB_URL"
                 
             }
         }
