@@ -6,8 +6,7 @@ pipeline {
     options {
       ansiColor('xterm')
     }
-    triggers {
-    }
+ 
     stages {
         stage('Test') {
             steps {
